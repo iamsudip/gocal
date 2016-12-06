@@ -19,6 +19,6 @@
 
 The server can be accesses at 'http://127.0.0.1:8000/'
 
-There are lots of empty which were automatically created, mainly please look into
+There are lots of empty files which were automatically created, mainly please look into
 
-`gocal.forms`, `gocal.views`, `gocal.utils`
+`web.forms`, `web.views`, `web.utils`
