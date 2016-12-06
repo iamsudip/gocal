@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from gocal.web.forms import ExpressionForm
-from gocal.web.utils import evaluate_expression
+from gocal.web.utils import evaluate_expression, EvaluateExpressionError
 
 
 def calculate(request):
@@ -15,7 +15,7 @@ def calculate(request):
             try:
                 result = evaluate_expression(expression)
             # If invalid expression then raise the error
-            except TypeError as e:
+            except EvaluateExpressionError as e:
                 ctx.update({
                     'error_message': e.message,
                     'status': 'FAILED',

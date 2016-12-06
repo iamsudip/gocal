@@ -22,3 +22,12 @@ The server can be accesses at 'http://127.0.0.1:8000/'
 There are lots of empty files which were automatically created, mainly please look into
 
 `web.forms`, `web.views`, `web.utils`
+
+**UPDATE**
+Implemented two backends:
+    `web.utils.ASTExpressionEvaluator` and `web.utils.ExpressionEvaluator`
+Constructor takes the expression as an argument and returns a callable.
+
+ExpressionHandler.USE_AST_EVALUATOR is the flag to switch backends
+
+If any wrong expression passes Evaluator will raise `web.utils.EvaluateExpressionError`
