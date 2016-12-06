@@ -1,0 +1,20 @@
+<div>
+    <form action="{% url 'calculate_expression' %}" method="post">
+        {% csrf_token %}
+        <div>
+        {{ form }}
+        <input type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+
+{% if status == 'SUCCESS' %}
+    <div>
+        Result of {{ expression }} is: {{ result }}
+    </div>
+{% elif status == 'FAILED' %}
+    <div>
+        Error: {{ error_message }}
+    </div>
+{% endif %}
+
